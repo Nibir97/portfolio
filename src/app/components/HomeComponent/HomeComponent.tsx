@@ -123,7 +123,7 @@ export default function HomeComponent() {
                   <h2
                     className={`text-[#223740] py-2 font-bold uppercase md:text-xl ${hind.className}`}
                   >
-                    CTO Cyber Next IT &amp; an Instructor
+                    CTO Cyber Next IT &amp; an Instructor.
                   </h2>
                   <a
                     href="/#portfolio"
