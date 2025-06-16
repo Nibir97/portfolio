@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "../app/components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-const poppins = localFont({
+const recoleta = localFont({
   src: [
   {
   path: "../../public/fonts/Recoleta-Black.ttf",
@@ -19,7 +19,8 @@ const poppins = localFont({
   weight: "200",
   },
   ],
-  variable: "--font-Recoleta-Black",
+  variable: "--font-recoleta",
+  display: "swap",
   });
 
 export const metadata: Metadata = {
@@ -33,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
+    <html lang="en" className="{recoleta.variable}">
+      <body suppressHydrationWarning={true} className={recoleta.className}>
         <Header/>
         {children}
         <Footer/>
