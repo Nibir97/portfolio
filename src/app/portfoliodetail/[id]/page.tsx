@@ -2,12 +2,12 @@ import React from 'react';
 import PorfolioDetailDesign from '../../page/portfolio-detail-design';
 import { DataArray } from '@/app/data';
 
-export default function Portfolio({ params }: { params: { id: string } }) {
-  const id = params.id;
+interface PortfolioProps {
+  params: Promise<{ id: string }>;
+}
 
-  if (!id || !DataArray[id]) {
-    return <div>Invalid portfolio ID</div>;
-  }
+export default async function PortfolioPage({ params }: PortfolioProps) {
+  const { id } = await params;
 
   return (
     <>
