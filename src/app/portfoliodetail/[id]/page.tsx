@@ -2,14 +2,8 @@ import React from 'react';
 import PorfolioDetailDesign from '../../page/portfolio-detail-design';
 import { DataArray } from '@/app/data';
 
-interface PortfolioProps {
-  params: {
-    id: string;
-  };
-}
-
-const Portfolio = ({ params }: PortfolioProps) => {
-  const { id } = params;
+export default function Portfolio({ params }: { params: { id: string } }) {
+  const id = params.id;
 
   if (!id || !DataArray[id]) {
     return <div>Invalid portfolio ID</div>;
@@ -24,6 +18,4 @@ const Portfolio = ({ params }: PortfolioProps) => {
       />
     </>
   );
-};
-
-export default Portfolio;
+}
