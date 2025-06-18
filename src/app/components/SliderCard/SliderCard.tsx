@@ -1,17 +1,28 @@
 'use client';
 import React from "react";
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 
-export default function SliderCard({ item, index }) {
+interface SliderCardProps {
+  item: {
+    name: string;
+    images: string[];
+  };
+  index: number;
+}
+
+export default function SliderCard({ item, index } : SliderCardProps) {
   const router = useRouter()
   return (
     <>
       <div className="h-[280px] lg:h-[450px] md:h-[400px] sm:h-[200px] lg:w-[650px] md:w-[450px] sm:w-[300px] w-[300px] relative m-auto">
         <div className="h-full w-full group cursor-all-scroll z-50 relative">
-          <img
+          <Image
             src={item.images[0]}
             alt="item thumbnail"
-            className="w-full h-[200px] lg:h-[350px] md:h-[300px] max-w-[100%] rounded-lg"
+            width={650}
+            height={450}
+            className="w-full h-[200px] lg:h-[350px] md:h-[300px] max-w-[100%] rounded-lg object-cover"
           />
           <div
             onClick={()=> router.push(`/portfoliodetail/${index}`)}

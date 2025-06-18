@@ -3,19 +3,24 @@ import React , { use } from 'react'
 import PorfolioDetailDesign from '../../page/portfolio-detail-design'
 import { DataArray } from '@/app/data'
 
-const Portfolio =(props)=>{
-  const params = use(props.params)
+interface PortfolioProps {
+  params: {
+    id: string;
+  };
+}
+
+const Portfolio: React.FC<PortfolioProps> =({ params }) => {
+  const id = params.id;
 
   return(
     <>
       <PorfolioDetailDesign
-      data={DataArray[params.id]}
-      id={params.id}
+      data={DataArray[id]}
+      id={id}
       DataArray={DataArray}
       />
     </>
-  )
-
-}
+  );
+};
 
 export default Portfolio

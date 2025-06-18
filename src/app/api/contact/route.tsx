@@ -1,25 +1,28 @@
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
 
-export async function POST(request) {
-    require('dotenv').config
-    const data=await request.json()
-    let nodemailer = require('nodemailer')
+dotenv.config();
+
+export async function POST(request: NextRequest) {
     try{
+        const data = await request.json();
+
         const transporter = nodemailer.createTransport({
             port: 465,
             host: "smtp.gmail.com",
             service: "gmail",
 
             auth:{
-                user: 'moinul.rocks@gmail.com',
-                pass: 'gnmlqclilkeosaks'
-            }
-        })
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
+            },
+        });
         const info = await transporter.sendMail({
-            from: `"${data.name}"`,
-            to: 'moinul.rocks@gmail.com',
+            from: `"${data.name}" <${process.env.EMAIL_USER}>`,
+            to: process.env.EMAIL_USER,
             subject: `Inquiry from Nibir's Portfolio`,
-            text: "",
             html: `
                 <html lang="en">
 <head>
@@ -79,13 +82,13 @@ export async function POST(request) {
 </body>
 </html>
             `
-        })
+        });
         if(info.messageId){
             return NextResponse.json({error:false, message: "Message Successfully sent! Thank you for contacting Md. Moinul Hossain Nibir"})
         }
         return NextResponse.json({error:true, message: "Something Went Wrong!"})
     }catch(e){
-        console.log(e)
+        console.error(e);
         return NextResponse.json({error:true, message: "Something Went Wrong!"})
     }
 }

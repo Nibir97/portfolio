@@ -8,37 +8,35 @@ const hind = Hind({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-export default function index({ id, data, DataArray }) {
+interface PortfolioDetailProps {
+  id: string;
+  data: {
+    title: string;
+    name: string;
+    des: string;
+    des1: string;
+    images: string[];
+  };
+  DataArray: {
+    title: string;
+    name: string;
+    des: string;
+    des1: string;
+    images: string[];
+  }[];
+}
+
+export default function PortfolioDetail({ id, data, DataArray } : PortfolioDetailProps) {
   const router = useRouter();
 
-  const [next, setNext] = useState();
-  const [prev, setPrev] = useState();
-
-  // useEffect(() => {
-  //   if (JSON.parse(id) === DataArray.length - 1) {
-  //     setNext(0);
-  //   } else {
-  //     setNext(JSON.parse(id) + 1);
-  //   }
-  //   if (JSON.parse(id) === DataArray.length - 1) {
-  //     setPrev(0);
-  //   } else {
-  //     setPrev(JSON.parse(id) - 1);
-  //   }
-  // });
+  const [next, setNext] = useState<number>(0);
+  const [prev, setPrev] = useState<number>(0);
 
   useEffect(() => {
-    if (JSON.parse(id) === DataArray.length - 1) {
-      setNext(0);
-    } else {
-      setNext(JSON.parse(id) + 1);
-    }
-    if (JSON.parse(id) === 0) {
-      setPrev(DataArray.length - 1);
-    } else {
-      setPrev(JSON.parse(id) - 1);
-    }
-  },[DataArray.length, id]);
+    const currentId = parseInt(id, 10);
+    setNext(currentId === DataArray.length - 1 ? 0 : currentId + 1);
+    setPrev(currentId === 0 ? DataArray.length - 1 : currentId - 1);
+  }, [DataArray.length, id]);
 
   return (
     <>
@@ -78,9 +76,9 @@ export default function index({ id, data, DataArray }) {
         <div className="col-span-12 lg:col-span-8 mb-20 scrol lg:px-0 sm:px-20">
           {data?.images.map((item, index) => (
             <div key={index} className="flex justify-center lg:justify-end items-center">
-              <img
+              <Image
                 src={item}
-                alt="portfolio photos"
+                alt={`portfolio photo ${index}`}
                 height={100}
                 width={800}
                 className="mt-20 rounded-lg"
@@ -98,29 +96,18 @@ export default function index({ id, data, DataArray }) {
               Project Descriptions
             </p>
             <p className="text-[14px] font-sans mb-4 text-[#223740]">
-              {" "}
               {data?.des1}
             </p>
 
             <div className="flex flex-wrap">
-              <h1 className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]">
-                Front-End Design & Development
-              </h1>
-              <h1 className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]">
-                Next.js
-              </h1>
-              <h1 className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]">
-                React.js
-              </h1>
-              <h1 className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]">
-                Node.js
-              </h1>
-              <h1 className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]">
-                Express
-              </h1>
-              <h1 className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]">
-                MongoDb
-              </h1>
+              {["Front-End Design & Development", "Next.js", "React.js", "Node.js", "Express", "MongoDb"].map((tech, idx) => (
+                <h1
+                  key={idx}
+                  className="mr-5 text-[14px] bg-[#63c5f1] lg:bg-[#EEF7FB] px-2 py-1 rounded-xl font-sans mb-4 text-white lg:text-[#6A787D]"
+                >
+                  {tech}
+                </h1>
+              ))}
             </div>
           </div>
         </div>
@@ -132,7 +119,7 @@ export default function index({ id, data, DataArray }) {
           style={{ backgroundImage: `url(${DataArray[prev]?.images[0]})` }}
         >
           <a
-            className="flex justify-center group:hover:bg-[#223740] cursor-pointer transition-colors duration-300 bg-[#405B66] bg-opacity-90 items-center w-full h-full"
+            className="flex justify-center group-hover:bg-[#223740] cursor-pointer transition-colors duration-300 bg-[#405B66] bg-opacity-90 items-center w-full h-full"
             onClick={() => router.push(`/portfoliodetail/${prev}`)}
           >
             <svg

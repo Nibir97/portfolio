@@ -1,11 +1,11 @@
 'use client'
-import React, { useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";
 import { AiFillMail, AiOutlineFieldTime } from "react-icons/ai";
 import { FaHeadphones } from "react-icons/fa";
 import { Hind } from "next/font/google";
-import { ToastClassName, ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CallToAction from '@/app/components/CallToAction/CallToAction';
 
@@ -14,7 +14,15 @@ subsets: ["latin"],
 weight: ["300", "400", "500", "600", "700"],
 });
 
-export default function page() {
+type ContactFormState = {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  subject: string;
+  message: string;
+};
+
+export default function ContactPage() {
 
   const [state, setState] = useState({
     name: "",
@@ -22,24 +30,24 @@ export default function page() {
     phoneNumber: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const key = e.target.name;
     const value = e.target.value;
-    setState({
-      ...state,
-      [key]: value
-    })
-  }
+    setState(prev => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
-  const handlePhoneChange = (e)=>{
+  const handlePhoneChange = (e: ChangeEvent<HTMLInputElement>)=>{
     const value = e.target.value
     const numericValue = value.replace(/[^0-9]/g, "")
-    setState({...state, phoneNumber:numericValue})
-  }
+    setState(prev => ({...prev, phoneNumber:numericValue}));
+  };
 
   const clearState = () => {
     setState({
@@ -51,37 +59,35 @@ export default function page() {
     })
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true)
-    let data = {
+    setLoading(true);
+    const data = {
       ...state
-    }
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-    .then(async(res)=>{
-      setLoading(false)
-      const response = await res.json()
-      if (!response.error){
-        clearState()
-        toast(response.message)
-      }else{
-        clearState()
-        toast("Something went wrong")
+    };
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const response = await res.json();
+      setLoading(false);
+      clearState();
+      if (!response.error) {
+        toast(response.message);
+      } else {
+        toast("Something went wrong");
       }
-    })
-    .catch((e)=>{
-      setLoading(false)
-      clearState()
-      toast("Something went wrong")
-    })
-  }
+    } catch {
+      setLoading(false);
+      clearState();
+      toast("Something went wrong");
+    }
+  };
 
   return (
     <React.Fragment>
@@ -229,7 +235,7 @@ export default function page() {
                 </p>
               </div>
               <div>
-                <button className='bg-[#48AFDE] text-white mb-[30px] px-4 py-2 hover:bg-[#223740] transition-color rounded-xl'>Let's chat</button>
+                <button className='bg-[#48AFDE] text-white mb-[30px] px-4 py-2 hover:bg-[#223740] transition-color rounded-xl'>Let&apos;s chat</button>
               </div>
             </div>
           </div>

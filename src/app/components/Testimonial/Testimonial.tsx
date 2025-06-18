@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Hind } from "next/font/google";
+import Image from "next/image";
 
 const hind = Hind({
   subsets: ["latin"],
@@ -126,7 +127,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -136,7 +137,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -151,7 +152,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -161,7 +162,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -176,7 +177,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -186,7 +187,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -201,7 +202,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -211,7 +212,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -226,7 +227,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -236,7 +237,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -251,7 +252,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -261,7 +262,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -276,7 +277,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -286,7 +287,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -301,7 +302,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -311,7 +312,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -326,7 +327,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -336,7 +337,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>
@@ -351,7 +352,7 @@ export default function Testimonial() {
               >
                 <div className="flex">
                   <div className="min-w-[100px]">
-                    <img src="nibir.png"
+                    <Image src="nibir.png"
                     className="w-20 h-20 rounded-full" alt="client photo"
                     />
                   </div>
@@ -361,7 +362,7 @@ export default function Testimonial() {
                       YouTube Student
                     </div>
                     <p className={`mb-6 font-[200] font-recoletaBlack min-h-[70px] text-[15px] mt-3`}>
-                      man I'm not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
+                      man I&apos;m not gay but I love you for what you did. thank you. nobody.. seriously nobody teaches this way explaining every class of tailwind and everything you write. people just say that go and download my code from github. but man you are the best. the amazing guide. thanks guru. thanks a ton.❤️❤️❤️❤️❤️
                     </p>
                   </div>
                 </div>

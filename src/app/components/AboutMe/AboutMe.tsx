@@ -11,19 +11,26 @@ const hind = Hind({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+interface AboutItem {
+  title: string;
+  count: number | string;
+  img: string;
+  array: string[];
+}
+
 export default function AboutMe() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isFaded, setIsFaded] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [mapData, setMapData] = useState(AboutData[0]);
+  const [mapData, setMapData] = useState<AboutItem>(AboutData[0]);
 
-  const myFunctions = (data) => {
+  const myFunctions = (data: AboutItem) => {
     setIsFlipped(false);
     setIsFaded(false);
     setMapData(data);
   };
 
-  const handleCardClick = (data, index) => {
+  const handleCardClick = (data: AboutItem, index: number) => {
     setIsFlipped(true);
     setIsFaded(true);
     setSelectedIndex(index);
@@ -32,7 +39,7 @@ export default function AboutMe() {
   };
 
   const HandleNext = () => {
-    if (selectedIndex < 5) {
+    if (selectedIndex < AboutData.length - 1) {
       handleCardClick(AboutData[selectedIndex + 1], selectedIndex + 1);
     } else {
       handleCardClick(AboutData[0], 0);
@@ -43,7 +50,7 @@ export default function AboutMe() {
     if (selectedIndex !== 0) {
       handleCardClick(AboutData[selectedIndex - 1], selectedIndex - 1);
     } else {
-      handleCardClick(AboutData[5], 5);
+      handleCardClick(AboutData[AboutData.length - 1], AboutData.length - 1);
     }
   };
 
@@ -70,9 +77,9 @@ export default function AboutMe() {
               {" "}
               My name is Md. Moinul Hossain Nibir. A professional and
               enthusiastic full-stack developer and designer. However, I am more
-              than just your average programmer or designer. I've been running
+              than just your average programmer or designer. I&apos;ve been running
               my own business for the past 7 years and I was continually coming
-              up with new concepts. I'm very fluid and never stop learning and
+              up with new concepts. I&apos;m very fluid and never stop learning and
               adapting to new situations.
             </p>
             <p
@@ -92,7 +99,7 @@ export default function AboutMe() {
               When I encounter a new problem, I usually conduct extensive
               research on it in order to comprehend it and discover cutting-edge
               and innovative approaches for dealing with similar problems in the
-              future. As a result, it's not unexpected that I've listed a lot of
+              future. As a result, it&apos;s not unexpected that I&apos;ve listed a lot of
               abilities here:
             </p>
           </section>

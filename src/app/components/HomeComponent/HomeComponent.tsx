@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import NibirPic from '/public/Nibirpic.png';
 import { Hind } from "next/font/google";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -118,7 +120,7 @@ export default function HomeComponent() {
                     Hi There!
                   </p>
                   <h1 className="text-[#223740] font-recoletaBlack text-5xl md:text-5xl lg:text-7xl xl:text-7xl mt-5 md:mt-3">
-                    I'm Nibir
+                    I&apos;m Nibir
                   </h1>
                   <h2
                     className={`text-[#223740] py-2 font-bold uppercase md:text-xl ${hind.className}`}
@@ -143,7 +145,14 @@ export default function HomeComponent() {
             </div>
             <div className="col-span-12 pt-[50px] md:bg-transparent bg-[#d9eef7] md:pt-[130px] md:col-span-7">
               <div className="container m-auto">
-                <img src="/Nibirpic.png" alt="Profile Pics" decoding="async" />
+                <Image 
+                src="/Nibirpic.png" 
+                alt="Profile Pics" 
+                decoding="async"
+                width={500}
+                height={300} 
+                priority
+                />
               </div>
             </div>
           </div>
@@ -157,17 +166,17 @@ export default function HomeComponent() {
               >
                 <div className="lg:py-10 md:py-6 sm:py-6 cursor-all-scroll">
                   <Slider {...settings}>
-                    <img src="/mongodb.png" alt="mongodb" className="h-12" />
-                    <img src="/reactjs.png" alt="reactjs" className="h-12" />
-                    <img src="/nextjs.png" alt="nextjs" className="h-12" />
-                    <img src="/docker.png" alt="docker" className="h-12" />
-                    <img
+                    <Image src="/mongodb.png" alt="mongodb" className="h-12" />
+                    <Image src="/reactjs.png" alt="reactjs" className="h-12" />
+                    <Image src="/nextjs.png" alt="nextjs" className="h-12" />
+                    <Image src="/docker.png" alt="docker" className="h-12" />
+                    <Image
                       src="/expressjs.png"
                       alt="expressjs"
                       className="h-12"
                     />
-                    <img src="/nodejs.png" alt="nodejs" className="h-12" />
-                    <img
+                    <Image src="/nodejs.png" alt="nodejs" className="h-12" />
+                    <Image
                       src="/expressjs.png"
                       alt="expressjs"
                       className="h-12"
