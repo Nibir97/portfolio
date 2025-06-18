@@ -1,16 +1,16 @@
-'use client'
-import React , { use } from 'react'
-import PorfolioDetailDesign from '../../page/portfolio-detail-design'
-import { DataArray } from '@/app/data'
+'use client';
+import React from 'react';
+import PorfolioDetailDesign from '../../page/portfolio-detail-design';
+import { DataArray } from '@/app/data';
+import { useParams } from 'next/navigation';
 
-interface PortfolioProps {
-  params: {
-    id: string;
-  };
-}
+const Portfolio = () => {
+  const params = useParams();
+  const id = typeof params?.id === 'string' ? params.id : Array.isArray(params?.id) ? params.id[0] : '';
 
-const Portfolio: React.FC<PortfolioProps> =({ params }) => {
-  const id = params.id;
+  if (!id || !DataArray[id]) {
+    return <div>Invalid portfolio ID</div>
+  }
 
   return(
     <>
